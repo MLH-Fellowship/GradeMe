@@ -23,7 +23,7 @@ const StyledFunctionalButton = styled.button`
 type ButtonProps = {
   children: string;
   to?: string;
-  onClick: React.MouseEventHandler<HTMLElement>;
+  onClick?: React.MouseEventHandler<HTMLElement>;
 };
 const Button = (props: ButtonProps) => {
   return (

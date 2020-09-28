@@ -2,11 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+import { primaryColor, white, gridLineColor } from "../theme";
+
 // TODO: Optimize layout for smaller screens
 const StyledHome = styled.div`
   height: 100vh;
   width: 100vw;
-  color: #fff;
+  color: ${white};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,16 +18,17 @@ const StyledHome = styled.div`
   background-image: repeating-linear-gradient(
       transparent,
       transparent 35px,
-      rgba(255, 255, 255, 0.25) 35px,
-      rgba(255, 255, 255, 0.25) 36px
+      ${gridLineColor} 35px,
+      ${gridLineColor} 36px
     ),
     repeating-linear-gradient(
       90deg,
-      #8c39f5,
-      #8c39f5 35px,
-      #a96bf7 35px,
-      #a96bf7 36px
+      ${primaryColor},
+      ${primaryColor} 35px,
+      ${gridLineColor} 35px,
+      ${gridLineColor} 36px
     );
+
   h2 {
     font-size: 72px;
     font-weight: 600;
@@ -42,17 +45,17 @@ const StyledHome = styled.div`
 `;
 
 const StyledButton = styled.button`
-  background: #fff;
+  background: ${white};
   border-radius: 25px;
   border: none;
-  color: #8c39f5;
+  color: ${primaryColor};
   font-size: 20px;
   padding: 0.5rem 2rem;
   margin-bottom: 1rem;
 `;
 
 const StyledLink = styled(Link)`
-  color: #fff;
+  color: ${white};
   text-decoration: none;
 `;
 

@@ -1,13 +1,12 @@
 import React from "react";
 
-import Navbar from "./Navbar";
+import Layout from "./Layout";
 
 const Calculator = () => {
   return (
-    <>
-      <Navbar />
+    <Layout>
       <h1>TODO: Calculator components</h1>
-    </>
+    </Layout>
   );
 };
 
