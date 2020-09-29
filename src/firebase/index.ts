@@ -1,6 +1,10 @@
 import * as firebase from "firebase/app";
 
 
+const isInitialized = () => {
+  return firebase.apps.length > 0;
+};
+
 const initialize = () => {
   firebase.initializeApp({
     apiKey: "AIzaSyAHEDybBBGR97FXlPFNMMVId_2tiyby9Ps",
@@ -13,6 +17,8 @@ const initialize = () => {
   });
 }
 
+
 export {
+  isInitialized,
   initialize,
 };
