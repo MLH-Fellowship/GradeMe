@@ -2,8 +2,15 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledAssignmentList = styled.div`
-  h1 {
-    font-size: 36px;
+`;
+
+const StyledAssignment = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  p {
+    font-size: 20px;
   }
 `;
 
@@ -23,13 +30,13 @@ type AssignmentListProps = {
 const AssignmentList = (props: AssignmentListProps) => {
   return (
     <StyledAssignmentList>
-      <h1>Assignment List</h1>
+      <h2>Assignment List</h2>
       {props.assignments.map((assignment) => (
-        <div key={assignment.id}>
+        <StyledAssignment key={assignment.id}>
           <p>{assignment.name}</p>
           <p>{assignment.grade}</p>
           <p>{assignment.weight}</p>
-        </div>
+        </StyledAssignment>
       ))}
     </StyledAssignmentList>
   );

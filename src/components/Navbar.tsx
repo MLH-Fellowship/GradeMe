@@ -7,7 +7,7 @@ import Button from "./Button";
 
 // TODO: Mobile styling
 const StyledNav = styled.nav`
-  width: 60%;
+  width: 80%;
   display: flex;
   justify-content: space-between;
   align-items: center;

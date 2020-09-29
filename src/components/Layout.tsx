@@ -9,7 +9,12 @@ const StyledLayout = styled.div`
   align-items: center;
 `;
 
-const StyledMain = styled.main``;
+const StyledMain = styled.main`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 type LayoutProps = {
   children: React.ReactNode;
