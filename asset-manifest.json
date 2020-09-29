@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/orgs/MLH-Fellowship/teams/pod-1-0-6/static/css/main.b7233044.chunk.css",
-    "main.js": "/orgs/MLH-Fellowship/teams/pod-1-0-6/static/js/main.7ffc49b4.chunk.js",
-    "main.js.map": "/orgs/MLH-Fellowship/teams/pod-1-0-6/static/js/main.7ffc49b4.chunk.js.map",
-    "runtime-main.js": "/orgs/MLH-Fellowship/teams/pod-1-0-6/static/js/runtime-main.031a371f.js",
-    "runtime-main.js.map": "/orgs/MLH-Fellowship/teams/pod-1-0-6/static/js/runtime-main.031a371f.js.map",
-    "static/js/2.9f110552.chunk.js": "/orgs/MLH-Fellowship/teams/pod-1-0-6/static/js/2.9f110552.chunk.js",
-    "static/js/2.9f110552.chunk.js.map": "/orgs/MLH-Fellowship/teams/pod-1-0-6/static/js/2.9f110552.chunk.js.map",
-    "index.html": "/orgs/MLH-Fellowship/teams/pod-1-0-6/index.html",
-    "precache-manifest.dcddb4cc1e886a5baf851c7dd2991203.js": "/orgs/MLH-Fellowship/teams/pod-1-0-6/precache-manifest.dcddb4cc1e886a5baf851c7dd2991203.js",
-    "service-worker.js": "/orgs/MLH-Fellowship/teams/pod-1-0-6/service-worker.js",
-    "static/css/main.b7233044.chunk.css.map": "/orgs/MLH-Fellowship/teams/pod-1-0-6/static/css/main.b7233044.chunk.css.map",
-    "static/js/2.9f110552.chunk.js.LICENSE.txt": "/orgs/MLH-Fellowship/teams/pod-1-0-6/static/js/2.9f110552.chunk.js.LICENSE.txt"
+    "main.css": "/MLH-Fellowship/GradeMe/static/css/main.b7233044.chunk.css",
+    "main.js": "/MLH-Fellowship/GradeMe/static/js/main.213034f2.chunk.js",
+    "main.js.map": "/MLH-Fellowship/GradeMe/static/js/main.213034f2.chunk.js.map",
+    "runtime-main.js": "/MLH-Fellowship/GradeMe/static/js/runtime-main.0aa0f6b9.js",
+    "runtime-main.js.map": "/MLH-Fellowship/GradeMe/static/js/runtime-main.0aa0f6b9.js.map",
+    "static/js/2.347a9fcc.chunk.js": "/MLH-Fellowship/GradeMe/static/js/2.347a9fcc.chunk.js",
+    "static/js/2.347a9fcc.chunk.js.map": "/MLH-Fellowship/GradeMe/static/js/2.347a9fcc.chunk.js.map",
+    "index.html": "/MLH-Fellowship/GradeMe/index.html",
+    "precache-manifest.1c35528b8fc65c2ab18e85638b6a00e5.js": "/MLH-Fellowship/GradeMe/precache-manifest.1c35528b8fc65c2ab18e85638b6a00e5.js",
+    "service-worker.js": "/MLH-Fellowship/GradeMe/service-worker.js",
+    "static/css/main.b7233044.chunk.css.map": "/MLH-Fellowship/GradeMe/static/css/main.b7233044.chunk.css.map",
+    "static/js/2.347a9fcc.chunk.js.LICENSE.txt": "/MLH-Fellowship/GradeMe/static/js/2.347a9fcc.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.031a371f.js",
-    "static/js/2.9f110552.chunk.js",
+    "static/js/runtime-main.0aa0f6b9.js",
+    "static/js/2.347a9fcc.chunk.js",
     "static/css/main.b7233044.chunk.css",
-    "static/js/main.7ffc49b4.chunk.js"
+    "static/js/main.213034f2.chunk.js"
   ]
 }

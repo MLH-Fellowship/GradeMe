@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/orgs/MLH-Fellowship/teams/pod-1-0-6/precache-manifest.dcddb4cc1e886a5baf851c7dd2991203.js"
+  "/MLH-Fellowship/GradeMe/precache-manifest.1c35528b8fc65c2ab18e85638b6a00e5.js"
 );
 
 self.addEventListener('message', (event) => {
@@ -33,7 +33,7 @@ workbox.core.clientsClaim();
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("/orgs/MLH-Fellowship/teams/pod-1-0-6/index.html"), {
+workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("/MLH-Fellowship/GradeMe/index.html"), {
   
   blacklist: [/^\/_/,/\/[^/?]+\.[^/]+$/],
 });
