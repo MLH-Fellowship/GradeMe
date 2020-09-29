@@ -17,10 +17,12 @@ const StyledCalculatorPage = styled.div`
   h1 {
     font-size: 64px;
     font-weight: 900;
+    margin-bottom: 0;
   }
 
   h2 {
     font-size: 36px;
+    margin-bottom: 0;
   }
 `;
 
