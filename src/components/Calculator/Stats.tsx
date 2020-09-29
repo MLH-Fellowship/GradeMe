@@ -15,6 +15,12 @@ const StatRow = styled.div`
   margin-bottom: 1rem;
 `;
 
+const StatCol = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-right: 1rem;
+`;
+
 const StyledStat = styled.div`
   margin-right: 2rem;
 
@@ -49,25 +55,43 @@ const Stats = (props: StatProps) => {
   const [lowGrade, setLowGrade] = useState(0);
 
   useEffect(() => {
-    const { curGrade, totalWeight } = getStats(props.assignments);
-    setAvgGrade(curGrade);
+    const { average, totalWeight, highestPossible, lowestPossible } = getStats(
+      props.assignments
+    );
+    setAvgGrade(average);
     setWeight(totalWeight);
+    setHighGrade(highestPossible);
+    setLowGrade(lowestPossible);
   }, [props.assignments]);
+
+  const nanGuard = (grade: number) => {
+    return isNaN(grade) ? 0 : grade;
+  };
 
   return (
     <StyledStats>
       <h2>Stats</h2>
       <StatRow>
-        <StyledStat>
-          <h3>Average Grade</h3>
-          <p>{avgGrade}%</p>
-        </StyledStat>
-      </StatRow>
-      <StatRow>
-        <StyledStat>
-          <h3>Combined Weight</h3>
-          <p>{weight}%</p>
-        </StyledStat>
+        <StatCol>
+          <StyledStat>
+            <h3>Average Grade</h3>
+            <p>{nanGuard(avgGrade)}%</p>
+          </StyledStat>
+          <StyledStat>
+            <h3>Combined Weight</h3>
+            <p>{nanGuard(weight)}%</p>
+          </StyledStat>
+        </StatCol>
+        <StatCol>
+          <StyledStat>
+            <h3>Highest Possible Grade</h3>
+            <p>{nanGuard(highGrade)}%</p>
+          </StyledStat>
+          <StyledStat>
+            <h3>Lowest Possible Grade</h3>
+            <p>{nanGuard(lowGrade)}%</p>
+          </StyledStat>
+        </StatCol>
       </StatRow>
     </StyledStats>
   );
