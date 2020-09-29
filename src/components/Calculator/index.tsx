@@ -91,7 +91,7 @@ const Calculator = (props: any) => {
     setGradeField(0);
     setWeightField(0);
 
-    await storeDocument(`assignments`, assignment);
+    if (props.user) await storeDocument(`assignments`, assignment);
     setAssignmentList([...assignmentList, assignment]);
   };
 
