@@ -7,6 +7,9 @@
 !.yarn/sdks
 !.yarn/versions
 
+# Dependencies
+node_modules/
+
 # testing
 /coverage
 
