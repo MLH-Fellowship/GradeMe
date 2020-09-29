@@ -29,7 +29,7 @@ const StyledLink = styled(Link)`
   }
 
   p {
-    font-size:24px;
+    font-size: 24px;
     margin-right: 2rem;
   }
 `;
@@ -44,6 +44,9 @@ const Navbar = () => {
       <NavLinks>
         <StyledLink to="/">
           <p>How to</p>
+        </StyledLink>
+        <StyledLink as="a" href="https://github.com/MLH-Fellowship/GradeMe">
+          <p>Github</p>
         </StyledLink>
         <Button to="/">Sign In</Button>
       </NavLinks>
