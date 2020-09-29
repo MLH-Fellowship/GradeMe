@@ -82,7 +82,7 @@ const Calculator = (props: any) => {
       name: nameField,
       grade: gradeField,
       weight: weightField,
-      uid: props.user ? props.user.uid : undefined,
+      uid: props.user ? props.user.uid : null,
     };
 
     setNameField("");
