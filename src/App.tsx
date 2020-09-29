@@ -26,7 +26,7 @@ const App = () => {
     <Router>
       <Switch>
         <Route exact path="/" render={(props: any) => <Home {...routeProps} />} />
-        <Route path="calculator" render={(props: any) => <Calculator {...routeProps} />} />
+        <Route path="/calculator" render={(props: any) => <Calculator {...routeProps} />} />
       </Switch>
     </Router>
   );
