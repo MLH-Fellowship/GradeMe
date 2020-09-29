@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { isUserSignedIn } from "../../firebase/auth";
+import { getDocuments, storeDocument } from "../../firebase/storage";
+import { isInitialized } from "../../firebase";
 import styled from "styled-components";
 
 import AssignmentList from "./AssignmentList";
@@ -43,7 +46,7 @@ type assignment = {
   weight: number;
 };
 
-const Calculator = () => {
+const Calculator = (props: any) => {
   const [assignmentList, setAssignmentList] = useState<assignment[]>([]);
   const [nameField, setNameField] = useState("");
   const [gradeField, setGradeField] = useState(0);
@@ -63,7 +66,7 @@ const Calculator = () => {
     }
   };
 
-  const addAssignment = () => {
+  const addAssignment = async () => {
     if (
       !nameField ||
       typeof gradeField !== "number" ||
@@ -79,13 +82,28 @@ const Calculator = () => {
       name: nameField,
       grade: gradeField,
       weight: weightField,
+      uid: props.user ? props.user.uid : undefined,
     };
 
     setNameField("");
     setGradeField(0);
     setWeightField(0);
+
+    await storeDocument(`assignments`, assignment);
     setAssignmentList([...assignmentList, assignment]);
   };
+
+  useEffect(() => {
+    async function fetchAssignments() {
+      if (!isInitialized()) return;
+      if (!isUserSignedIn()) return;
+      if (props.user && props.user.uid) {
+        setAssignmentList((await getDocuments(`assignments`, { fieldPath: "uid", opStr: "==", value: props.user.uid })) as any);
+      }
+    };
+
+    fetchAssignments();
+  }, [props.user]);
 
   return (
     <Layout>
