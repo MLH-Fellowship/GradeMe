@@ -54,7 +54,7 @@ const StyledButton = styled.button`
   font-size: 20px;
   padding: 0.5rem 2rem;
   margin: 1rem 0 1rem 0;
-  
+
   &:hover {
     cursor: pointer;
   }
@@ -94,7 +94,11 @@ const Home = () => {
         <StyledLink to="/calculator">Back to calculator</StyledLink>
       </StyledOptions>
       <p>
-        Created with ❤️ by{" "}
+        Created with{" "}
+        <span role="img" aria-label="Heart Emoji">
+          ❤️
+        </span>{" "}
+        by{" "}
         <UnderlineLink href="https://github.com/spellew">
           Shamroy,
         </UnderlineLink>{" "}

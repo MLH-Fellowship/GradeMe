@@ -6,11 +6,13 @@ import { getStats } from "../../utils/statCalculator";
 const StyledStats = styled.div`
   display: flex;
   flex-direction: column;
+  margin: 0 4rem 4rem 0;
 `;
 
 const StatRow = styled.div`
   display: flex;
   flex-direction: row;
+  margin-bottom: 1rem;
 `;
 
 const StyledStat = styled.div`
@@ -19,11 +21,13 @@ const StyledStat = styled.div`
   h3 {
     font-size: 20px;
     font-weight: 300;
+    margin: 0;
   }
 
   p {
     font-size: 30px;
     font-weight: 900;
+    margin: 0;
   }
 `;
 
@@ -56,13 +60,13 @@ const Stats = (props: StatProps) => {
       <StatRow>
         <StyledStat>
           <h3>Average Grade</h3>
-          <p>{avgGrade}</p>
+          <p>{avgGrade}%</p>
         </StyledStat>
       </StatRow>
       <StatRow>
         <StyledStat>
           <h3>Combined Weight</h3>
-          <p>{weight}</p>
+          <p>{weight}%</p>
         </StyledStat>
       </StatRow>
     </StyledStats>

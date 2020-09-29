@@ -21,6 +21,7 @@ const StyledInput = styled.input`
   color: ${grey};
   display: inline-block;
   font-size: 20px;
+  padding: 0.25rem 1rem;
 `;
 
 type InputProps = {

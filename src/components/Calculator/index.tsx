@@ -12,7 +12,7 @@ const StyledCalculatorPage = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
 
   h1 {
     font-size: 64px;
@@ -24,12 +24,15 @@ const StyledCalculatorPage = styled.div`
   }
 `;
 
-const GradeInput = styled.div``;
+const GradeInput = styled.div`
+  margin: 0 4rem 4rem 0;
+`;
 
 const InputFields = styled.div`
   margin-bottom: 2rem;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: flex-start;
 `;
 
@@ -40,8 +43,6 @@ type assignment = {
   weight: number;
 };
 
-// TODO: Styling, layout
-// TODO: Add results section that calculates grade weights
 const Calculator = () => {
   const [assignmentList, setAssignmentList] = useState<assignment[]>([]);
   const [nameField, setNameField] = useState("");
@@ -70,8 +71,9 @@ const Calculator = () => {
     )
       return;
 
-    let date = new Date();
-
+    // Get time in seconds to append to the name of the task to
+    // generate a *mostly* unique ID for the assignment
+    let date = new Date().getTime() / 1000;
     const assignment = {
       id: `${nameField}-${date}`,
       name: nameField,
@@ -79,6 +81,9 @@ const Calculator = () => {
       weight: weightField,
     };
 
+    setNameField("");
+    setGradeField(0);
+    setWeightField(0);
     setAssignmentList([...assignmentList, assignment]);
   };
 
