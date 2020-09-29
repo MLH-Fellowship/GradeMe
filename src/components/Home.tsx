@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { signInWithGoogle } from "../firebase/auth";
 import styled from "styled-components";
 
 import { primaryColor, white, gridLineColor } from "../theme";
@@ -59,16 +60,14 @@ const StyledLink = styled(Link)`
   text-decoration: none;
 `;
 
-const Home = () => {
-  const signIn = () => {
-    // TODO: Firebase authentication
-  };
+const Home = (props: any) => {
+  const signIn = async () => props.setUser(await signInWithGoogle());
 
   return (
     <StyledHome>
       <h2>GradeMe</h2>
-      <h1>Sign In</h1>
-      <StyledButton onClick={signIn}>Sign in with Github</StyledButton>
+      <h1>{props.user != null ? props.user.displayName : "Sign In"}</h1>
+      {props.user === null && <StyledButton onClick={signIn}>Sign in with Google</StyledButton>}
       <StyledLink to="/calculator">Back to calculator</StyledLink>
     </StyledHome>
   );
