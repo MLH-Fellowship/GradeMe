@@ -11,6 +11,10 @@ const StyledGenericButton = css`
   border: none;
   font-size: 20px;
   padding: 0.5rem 2rem;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const StyledLinkButton = styled(Link)`

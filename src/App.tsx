@@ -7,7 +7,6 @@ import { signInWithGoogle } from "./firebase/auth";
 import Home from "./components/Home";
 import Calculator from "./components/Calculator";
 
-
 const App = () => {
   const [user, setUser] = useState<firebase.User | null>(null);
   const routeProps: any = { setUser, user };

@@ -12,7 +12,7 @@ const StyledHome = styled.div`
   color: ${white};
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 
   /* Background styles */
@@ -33,11 +33,13 @@ const StyledHome = styled.div`
   h2 {
     font-size: 72px;
     font-weight: 600;
+    margin: 2rem 0 -2rem 0;
   }
 
   h1 {
     font-size: 144px;
     font-weight: 600;
+    margin: 0 0 2rem 0;
   }
 
   p {
@@ -52,12 +54,31 @@ const StyledButton = styled.button`
   color: ${primaryColor};
   font-size: 20px;
   padding: 0.5rem 2rem;
-  margin-bottom: 1rem;
+  margin: 1rem 0 1rem 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+const StyledOptions = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const StyledLink = styled(Link)`
   color: ${white};
   text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+const UnderlineLink = styled.a`
+  color: ${white};
+  text-decoration: underline;
 `;
 
 const Home = (props: any) => {
@@ -66,9 +87,25 @@ const Home = (props: any) => {
   return (
     <StyledHome>
       <h2>GradeMe</h2>
-      <h1>{props.user != null ? props.user.displayName : "Sign In"}</h1>
-      {props.user === null && <StyledButton onClick={signIn}>Sign in with Google</StyledButton>}
-      <StyledLink to="/calculator">Back to calculator</StyledLink>
+      <StyledOptions>
+        <h1>{props.user != null ? props.user.displayName : "Sign In"}</h1>
+        {props.user === null && (
+          <StyledButton onClick={signIn}>Sign in with Google</StyledButton>
+        )}
+        <StyledLink to="/calculator">Back to calculator</StyledLink>
+      </StyledOptions>
+      <p>
+        Created with{" "}
+        <span role="img" aria-label="Heart Emoji">
+          ❤️
+        </span>{" "}
+        by{" "}
+        <UnderlineLink href="https://github.com/spellew">
+          Shamroy,
+        </UnderlineLink>{" "}
+        <UnderlineLink href="https://github.com/tomdng">Tommy,</UnderlineLink>{" "}
+        and <UnderlineLink href="https://github.com/Walsker">Wal</UnderlineLink>
+      </p>
     </StyledHome>
   );
 };
