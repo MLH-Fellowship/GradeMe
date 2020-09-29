@@ -23,7 +23,7 @@ const InputFields = styled.div`
 `;
 
 type assignment = {
-  id: number;
+  id: string;
   name: string;
   grade: number;
   weight: number;
@@ -33,10 +33,9 @@ type assignment = {
 // TODO: Add results section that calculates grade weights
 const Calculator = () => {
   const [assignmentList, setAssignmentList] = useState<assignment[]>([]);
-  const [id, setId] = useState(0);
   const [nameField, setNameField] = useState("");
-  const [gradeField, setGradeField] = useState();
-  const [weightField, setWeightField] = useState();
+  const [gradeField, setGradeField] = useState(0);
+  const [weightField, setWeightField] = useState(0);
 
   const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     switch(event.target.id) {
@@ -44,23 +43,26 @@ const Calculator = () => {
         setNameField(event.target.value);
         break;
       case "gradeField":
-        setGradeField(event.target.value);
+        setGradeField(parseInt(event.target.value) || 0);
         break;
       case "weightField":
-        setWeightField(event.target.value);
+        setWeightField(parseInt(event.target.value) || 0);
         break;
     }
   };
 
   const addAssignment = () => {
+    if (!nameField || !gradeField || !weightField) return;
+   
+    const date = new Date();
+    
     const assignment = {
-      id: id,
+      id: `${nameField}-${date}`,
       name: nameField,
       grade: gradeField,
       weight: weightField
     };
 
-    setId(id + 1);
     setAssignmentList([...assignmentList, assignment]);
   };
 

@@ -8,7 +8,7 @@ const StyledAssignmentList = styled.div`
 `;
 
 type Assignment = {
-  id: number;
+  id: string;
   name: string;
   grade: number;
   weight: number;
@@ -25,7 +25,7 @@ const AssignmentList = (props: AssignmentListProps) => {
     <StyledAssignmentList>
       <h1>Assignment List</h1>
       {props.assignments.map((assignment) => (
-        <div>
+        <div key={assignment.id}>
           <p>{assignment.name}</p>
           <p>{assignment.grade}</p>
           <p>{assignment.weight}</p>
