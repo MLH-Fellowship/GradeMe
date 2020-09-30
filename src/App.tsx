@@ -22,7 +22,7 @@ const App = () => {
   }
 
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Switch>
         <Route exact path="/" render={(props: any) => <Home {...routeProps} />} />
         <Route path="/calculator" render={(props: any) => <Calculator {...routeProps} />} />
